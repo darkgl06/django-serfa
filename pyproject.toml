@@ -1,17 +1,19 @@
-[tool.poetry]
+[project]
 name = "django-serfa"
 version = "0.1.0"
-description = ""
-authors = ["Andrés Garrido <andreslp0001@gmail.com>"]
+description = "Define test services for Django test runs with Testcontainers"
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "^3.12"
-django = "^5.1.1"
-testcontainers = "^4.8.1"
-schema = "^0.7.7"
-
+authors = [{ name = "Andrés Garrido", email = "andreslp0001@gmail.com" }]
+requires-python = ">=3.12,<4"
+dependencies = [
+    "django>=5.1.1,<6",
+    "testcontainers>=4.8.1,<5",
+    "schema>=0.7.7,<0.8",
+]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["uv_build>=0.11.31,<0.12"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-root = ""
